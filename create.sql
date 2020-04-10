@@ -1,3 +1,5 @@
+-- tutorial for PostgreSQL
+-- type $psql <name of database> in terminal
 CREATE TABLE flights (
     -- id on every single table is very practical
     -- serial is just an integer that automatically counts
