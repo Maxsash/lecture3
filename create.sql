@@ -52,4 +52,14 @@ UPDATE flights
 -- DELETE query
 DELETE FROM flights 
     WHERE destination = 'Tokyo'
+
+-- ORDERing the results
+-- sorts in ascending order of duration; also DESC
+SELECT * FROM flights ORDER BY duration ASC
+-- GROUPing the results
+-- will return the number of flights from each origin
+SELECT origin, COUNT(*) FROM flights GROUP BY origin
+-- HAVING clause
+-- will only return the results with count greater than 1
+SELECT origin, COUNT(*) FROM flights GROUP BY origin HAVING COUNT(*)>1
 ;
