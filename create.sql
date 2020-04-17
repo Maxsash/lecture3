@@ -73,4 +73,16 @@ CREATE TABLE passengers(
 )
 -- initiate it with an entry
 INSERT INTO passengers(name, flight_id) VALUES('Alice', 1)
+
+-- JOIN along with other clause
+-- default is 'inner JOIN': shows only rows that have a match
+-- also LEFT JOIN: makes sure all rows of table on left are included in result even without a match
+-- similarly RIGHT JOIN
+SELECT origin, destination, name FROM flights JOIN passengers ON 
+passengers.flight_id = flights.id WHERE name = 'Alice'
+
+-- a complicated query
+-- returns details of flights whose id have more than 1 passengers corresponding to it
+SELECT * FROM flights WHERE id IN 
+(SELECT flight_id FROM passengers GROUP BY flight_id HAVING COUNT(*)>1)
 ;
