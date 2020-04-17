@@ -21,4 +21,23 @@ CREATE TABLE flights (
 INSERT INTO flights
     (origin, destination, duration)
     VALUES ('New York', 'London', 415)
+
+-- Reading the table requires SELECT query. 
+-- * means select everything
+SELECT * FROM flights
+-- to view data only from origin and destination columns
+SELECT origin, destination FROM flights
+-- to have control over rows as well
+SELECT * FROM flights WHERE id=1
+-- other examples include
+SELECT * FROM flights WHERE duration > 200 AND destination = 'Paris'
+-- using functions 
+SELECT AVG(duration) FROM flights
+SELECT COUNT(*) FROM flights where origin = 'New York'
+-- other popular functions include MIN, MAX, SUM
+-- more ways to be specific
+SELECT * FROM flights WHERE origin IN ('New York', 'Lima')
+-- using REGEX
+-- % will look for 0 or more amount of string followed by 'a' and then zero or more string
+SELECT * FROM flights WHERE origin LIKE '%a%'
 ;
