@@ -40,10 +40,16 @@ SELECT * FROM flights WHERE origin IN ('New York', 'Lima')
 -- using REGEX
 -- % will look for 0 or more amount of string followed by 'a' and then zero or more string
 SELECT * FROM flights WHERE origin LIKE '%a%'
+-- Limiting the number of results
+SELECT * FROM flights LIMIT 2
 
 -- UPDATE query 
 UPDATE flights 
     SET duration = 430
     WHERE origin = 'NEW YORK'
     AND destination = 'London'
+
+-- DELETE query
+DELETE FROM flights 
+    WHERE destination = 'Tokyo'
 ;
