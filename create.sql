@@ -15,4 +15,10 @@ CREATE TABLE flights (
     destination VARCHAR NOT NULL,
     -- duration in minutes
     duration INTEGER NOT NULL
-);
+    )
+
+-- Inserting entries in the table. Values not specified are either serially added or take default values.
+INSERT INTO flights
+    (origin, destination, duration)
+    VALUES ('New York', 'London', 415)
+;
