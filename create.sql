@@ -62,4 +62,15 @@ SELECT origin, COUNT(*) FROM flights GROUP BY origin
 -- HAVING clause
 -- will only return the results with count greater than 1
 SELECT origin, COUNT(*) FROM flights GROUP BY origin HAVING COUNT(*)>1
+
+-- about Foreign Keys
+-- create another table and establish relationship beteween the tables
+CREATE TABLE passengers(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    -- this references thing is the one that will link tables
+    flight_id INTEGER REFERENCES flights
+)
+-- initiate it with an entry
+INSERT INTO passengers(name, flight_id) VALUES('Alice', 1)
 ;
