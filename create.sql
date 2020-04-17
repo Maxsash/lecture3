@@ -1,5 +1,8 @@
 -- tutorial for PostgreSQL
+-- we need to start a Postgres server to work on it. Locally or can find databases hosted online.
 -- type $psql <name of database> in terminal
+-- inside postgres, if prompt is '-' instead of '=' that means it is waiting for a ';' before execution.
+-- \d lists the relations(tables) that have been created
 CREATE TABLE flights (
     -- id on every single table is very practical
     -- serial is just an integer that automatically counts
