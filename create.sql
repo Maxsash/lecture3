@@ -94,4 +94,8 @@ SELECT * FROM users WHERE (username = 'alice') AND (password = '12345')
 -- this will make the query be like
 SELECT * FROM users WHERE (username = 'hacker') AND (password = '1'OR'1'='1')
 -- this will make the password clause always true.  This is called SQL injection.
+
+-- RACE condition
+-- avoid confusion due to multiple transactions at the same time.
+-- use BEGIN and COMMIT
 ;
