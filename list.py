@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 #creating a database engine, handles the database. Need to put databse_url value
-engine = create_engine(os.getenv("DATABASE_URL"))
+engine = create_engine("postgresql://postgres:mojoj0j0@localhost:5432/postgres")
 #creating a scoped session. Keeps separate session for different people
 db = scoped_session(sessionmaker(bind=engine))
 
