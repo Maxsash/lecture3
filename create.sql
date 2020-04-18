@@ -98,4 +98,6 @@ SELECT * FROM users WHERE (username = 'hacker') AND (password = '1'OR'1'='1')
 -- RACE condition
 -- avoid confusion due to multiple transactions at the same time.
 -- use BEGIN and COMMIT
+
+-- SQLAlchemy | Bridging the gap between SQL and Python
 ;
