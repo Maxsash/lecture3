@@ -85,4 +85,13 @@ passengers.flight_id = flights.id WHERE name = 'Alice'
 -- returns details of flights whose id have more than 1 passengers corresponding to it
 SELECT * FROM flights WHERE id IN 
 (SELECT flight_id FROM passengers GROUP BY flight_id HAVING COUNT(*)>1)
+
+-- SQL injection
+-- connsider a login form. And the query to authorize it might look something like this:
+SELECT * FROM users WHERE (username = 'alice') AND (password = '12345')
+-- let's say the hacker inputs username = hacker 
+-- and password = 1'OR'1'='1
+-- this will make the query be like
+SELECT * FROM users WHERE (username = 'hacker') AND (password = '1'OR'1'='1')
+-- this will make the password clause always true.  This is called SQL injection.
 ;
